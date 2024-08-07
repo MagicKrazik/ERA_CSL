@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ERA - Solicitud de Cotización{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/cotizaciones.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="quote-hero">
+    <div class="container">
+        <h1>Solicite su Cotización</h1>
+        <p>Obtenga un presupuesto personalizado para sus necesidades de gestión de residuos</p>
+    </div>
+</section>
+
+<section class="quote-form">
+    <div class="container">
+        <form id="quoteForm">
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="tipo_servicio">Tipo de servicio</label>
+                <select id="tipo_servicio" name="tipo_servicio" required>
+                    <option value="">Seleccione un servicio</option>
+                    <option value="residencial">Residencial</option>
+                    <option value="comercial">Comercial</option>
+                    <option value="industrial">Industrial</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="frecuencia">Frecuencia de recolección</label>
+                <select id="frecuencia" name="frecuencia" required>
+                    <option value="">Seleccione la frecuencia</option>
+                    <option value="semanal">Semanal</option>
+                    <option value="quincenal">Quincenal</option>
+                    <option value="mensual">Mensual</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje adicional</label>
+                <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Solicitar Cotización</button>
+        </form>
+    </div>
+</section>
+
+<section class="benefits">
+    <div class="container">
+        <h2>¿Por qué elegir ERA?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+                    <path fill="#028C23" d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                  </svg>
+                <h3>Compromiso Ambiental</h3>
+                <p>Nuestras prácticas sostenibles ayudan a reducir el impacto ambiental.</p>
+            </div>
+            <div class="benefit-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+                  <path fill="#028C23" d="M21 8c-1.45 0-2.26 1.44-1.93 2.51l-3.55 3.56c-.3-.09-.74-.09-1.04 0l-2.55-2.55C12.27 10.45 11.46 9 10 9c-1.45 0-2.27 1.44-1.93 2.52l-4.56 4.55C2.44 15.74 1 16.55 1 18c0 1.1.9 2 2 2 1.45 0 2.26-1.44 1.93-2.51l4.55-4.56c.3.09.74.09 1.04 0l2.55 2.55C12.73 16.55 13.54 18 15 18c1.45 0 2.27-1.44 1.93-2.52l3.56-3.55c1.07.33 2.51-.48 2.51-1.93 0-1.1-.9-2-2-2z"/>
+                  <path fill="#028C23" d="m15 9l.94-2.07L18 6l-2.06-.93L15 3l-.92 2.07L12 6l2.08.93zM3.5 11L4 9l2-.5L4 8l-.5-2L3 8l-2 .5L3 9z"/>
+                </svg>
+                <h3>Servicio Confiable</h3>
+                <p>Puntualidad y eficiencia en cada recolección.</p>
+            </div>
+            <div class="benefit-item">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64">
+                  <path fill="#028C23" d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM13 20.01L4 11V4h7v-.01l9 9-7 7.02z"/>
+                  <circle fill="#028C23" cx="6.5" cy="6.5" r="1.5"/>
+                </svg>
+                <h3>Precios Competitivos</h3>
+                <p>Ofrecemos tarifas justas y transparentes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/cotizaciones.js' %}"></script>
+{% endblock %}

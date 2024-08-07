@@ -4,7 +4,7 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'home.html')
 
-def cotizaciones(request):
+def cotizaciones_view(request):
     return render(request, 'cotizaciones.html')
 
 def login_operadores(request):

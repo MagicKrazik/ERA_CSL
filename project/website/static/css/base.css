@@ -48,6 +48,7 @@ body {
 
 .logo-container {
   flex: 0 0 auto;
+  margin-left: 20px;
 }
 
 .logo-box {
@@ -114,6 +115,7 @@ body {
 .navbar-toggle {
   display: none;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .bar {
