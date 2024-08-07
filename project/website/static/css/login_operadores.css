@@ -1,0 +1,69 @@
+/* ERA Login Styles - Building on existing Home Styles */
+
+/* Importing base styles */
+@import url('home.css');
+
+/* Login Form Section */
+.login-form {
+    padding: 40px 20px;
+    background-color: var(--white);
+}
+
+.login-form form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-form .cta-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-form .cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .login-form {
+        padding: 60px 20px;
+    }
+
+    .login-form form {
+        padding: 40px;
+    }
+}
