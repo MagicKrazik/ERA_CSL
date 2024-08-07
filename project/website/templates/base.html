@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ERA - Cabo San Lucas, BCS{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+      <div class="container navbar-content">
+        <div class="navbar-left">
+          <div class="logo-container">
+            <a href="{% url 'home' %}" class="logo-box">
+              <img src="{% static 'images/Logo_ERA_transparente_G.png' %}" alt="ERA Logo" class="logo">
+            </a>
+          </div>
+        </div>
+        <div class="navbar-right">
+          <a href="{% url 'home' %}">Inicio</a>
+          <a href="{% url 'cotizaciones' %}">Cotizaciones</a>
+          <a href="{% url 'login_operadores' %}">Login Operadores</a>
+          <a href="{% url 'login_clientes' %}">Login Clientes</a>
+        </div>
+        <div id="mobile-menu" class="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="mobile-menu">
+      <a href="{% url 'home' %}">Inicio</a>
+      <a href="{% url 'cotizaciones' %}">Cotizaciones</a>
+      <a href="{% url 'login_operadores' %}">Login Operadores</a>
+      <a href="{% url 'login_clientes' %}">Login Clientes</a>
+    </div>
+  
+    <main role="main" class="container">
+      {% block content %}{% endblock %}
+    </main>
+  
+    <footer>
+      <div class="footer-content">
+        © 2024 ERA. All rights reserved.
+      </div>
+    </footer>
+
+    {% block extra_js %}
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const mobileMenu = document.querySelector('.mobile-menu');
+              
+                menuToggle.addEventListener('click', function() {
+                  mobileMenu.classList.toggle('active');
+                  menuToggle.classList.toggle('active');
+                });
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>

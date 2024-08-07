@@ -1,0 +1,169 @@
+/* ERA Home Styles - Mobile Optimized */
+
+/* Base styles */
+:root {
+    --primary-color: #028C23;
+    --secondary-color: #04BF8A;
+    --accent-color: #F2B705;
+    --text-color: #333333;
+    --background-color: #F5F5F5;
+    --white: #FFFFFF;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(2, 140, 35, 0.8), rgba(2, 140, 35, 0.8)), url('../images/cabo-san-lucas-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease-out 0.5s;
+    animation-fill-mode: both;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out 1s;
+    animation-fill-mode: both;
+}
+
+.cta-button:hover, .cta-button:active {
+    background-color: var(--white);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features {
+    padding: 40px 20px;
+    background-color: var(--white);
+}
+
+.features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.feature {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.feature.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.feature p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .features-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .feature {
+        flex-basis: calc(50% - 30px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        max-width: 800px;
+    }
+
+    .features-container {
+        max-width: 1200px;
+    }
+
+    .feature {
+        flex-basis: calc(33.333% - 40px);
+    }
+}
+
+/* Touch-friendly hover effects */
+@media (hover: hover) {
+    .feature:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+

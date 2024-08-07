@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ERA - Cabo San Lucas, BCS{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Bienvenido a ERA</h1>
+        <p>Tu socio de confianza en Cabo San Lucas, BCS</p>
+        <a href="{% url 'cotizaciones' %}" class="cta-button">Obtener Cotización</a>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <img src="{% static 'images/feature1.png' %}" alt="Característica 1">
+        <h2>Servicio de Calidad</h2>
+        <p>Proporcionamos servicios de primera clase para satisfacer tus necesidades.</p>
+    </div>
+    <div class="feature">
+        <img src="{% static 'images/feature2.png' %}" alt="Característica 2">
+        <h2>Equipo Experto</h2>
+        <p>Nuestros profesionales experimentados están aquí para ayudarte.</p>
+    </div>
+    <div class="feature">
+        <img src="{% static 'images/feature3.png' %}" alt="Característica 3">
+        <h2>Satisfacción del Cliente</h2>
+        <p>Tu satisfacción es nuestra prioridad principal.</p>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate features on scroll
+        const features = document.querySelectorAll('.feature');
+        const animateFeatures = () => {
+            const triggerBottom = window.innerHeight * 0.8;
+    
+            features.forEach(feature => {
+                const featureTop = feature.getBoundingClientRect().top;
+    
+                if (featureTop < triggerBottom) {
+                    feature.classList.add('animate');
+                }
+            });
+        };
+    
+        window.addEventListener('scroll', animateFeatures);
+        animateFeatures(); // Initial check on page load
+    
+        // Smooth scroll for CTA button
+        const ctaButton = document.querySelector('.cta-button');
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    
+        // Add touch ripple effect for mobile
+        const addRippleEffect = (e) => {
+            const button = e.currentTarget;
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+    
+            ripple.style.width = ripple.style.height = `${size}px`;
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            ripple.classList.add('ripple');
+    
+            button.appendChild(ripple);
+    
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        };
+    
+        ctaButton.addEventListener('touchstart', addRippleEffect);
+    });
+</script>
+{% endblock %}
