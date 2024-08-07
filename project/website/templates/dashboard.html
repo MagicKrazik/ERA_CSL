@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}ERA - Panel de Control{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <div class="dashboard-header">
+        <h1>Panel de Control - ERA</h1>
+        <p>Resumen de Operaciones</p>
+    </div>
+
+    <section class="metrics-overview">
+        <div class="metric-card total-visits">
+            <h2>Visitas Totales</h2>
+            <p class="metric-value">1,234</p>
+        </div>
+        <div class="metric-card total-clients">
+            <h2>Clientes Activos</h2>
+            <p class="metric-value">45</p>
+        </div>
+        <div class="metric-card total-waste">
+            <h2>Residuos Gestionados</h2>
+            <p class="metric-value">5,678 kg</p>
+        </div>
+    </section>
+
+    <section class="client-visits">
+        <h2>Visitas por Cliente</h2>
+        <div class="client-chart" id="clientVisitsChart"></div>
+    </section>
+
+    <section class="recent-reports">
+        <h2>Informes Recientes</h2>
+        <div class="report-list">
+            <div class="report-item">
+                <img src="{% static 'images/before.jpg' %}" alt="Antes" class="report-image">
+                <img src="{% static 'images/after.jpg' %}" alt="Después" class="report-image">
+                <div class="report-details">
+                    <h3>Cliente ABC</h3>
+                    <p>Fecha: 05/08/2024</p>
+                    <div class="report-actions">
+                        <a href="#" class="view-report">Ver Informe Completo</a>
+                        <button class="send-report">Enviar Informe</button>
+                    </div>
+                    <div class="report-status">
+                        <input type="checkbox" id="report1-sent" name="report1-sent">
+                        <label for="report1-sent">Informe Enviado</label>
+                    </div>
+                </div>
+            </div>
+            <div class="report-item">
+                <img src="{% static 'images/before.jpg' %}" alt="Antes" class="report-image">
+                <img src="{% static 'images/after.jpg' %}" alt="Después" class="report-image">
+                <div class="report-details">
+                    <h3>Cliente XYZ</h3>
+                    <p>Fecha: 04/08/2024</p>
+                    <div class="report-actions">
+                        <a href="#" class="view-report">Ver Informe Completo</a>
+                        <button class="send-report">Enviar Informe</button>
+                    </div>
+                    <div class="report-status">
+                        <input type="checkbox" id="report2-sent" name="report2-sent">
+                        <label for="report2-sent">Informe Enviado</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Client Visits Chart
+    var ctx = document.getElementById('clientVisitsChart').getContext('2d');
+    var clientVisitsChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Cliente A', 'Cliente B', 'Cliente C', 'Cliente D', 'Cliente E'],
+            datasets: [{
+                label: 'Número de Visitas',
+                data: [12, 19, 8, 15, 10],
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Número de Visitas'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Clientes'
+                    }
+                }
+            }
+        }
+    });
+</script>
+{% endblock %}

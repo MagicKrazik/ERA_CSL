@@ -10,41 +10,45 @@
     {% block extra_css %}{% endblock %}
 </head>
 <body>
-  <nav class="navbar">
-      <div class="container navbar-content">
-          <div class="navbar-left">
-              <div class="logo-container">
-                  <a href="{% url 'home' %}" class="logo-box">
-                      <img src="{% static 'images/Logo_ERA_transparente_G.png' %}" alt="ERA Logo" class="logo">
-                  </a>
-              </div>
-          </div>
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <div class="navbar-left">
+                <div class="logo-container">
+                    <a href="{% url 'home' %}" class="logo-box">
+                        <img src="{% static 'images/Logo_ERA_transparente_G.png' %}" alt="ERA Logo" class="logo">
+                    </a>
+                </div>
+            </div>
 
-          <div class="navbar-right navbar-menu">
-              <a href="{% url 'home' %}">Inicio</a>
-              <a href="{% url 'cotizaciones_view' %}">Cotizaciones</a>
-              <a href="{% url 'login_operadores' %}">Login Operadores</a>
-              <a href="{% url 'login_clientes' %}">Login Clientes</a>
-              <a href="{% url 'pictures_site' %}">Pictures Site</a>
-          </div>
+            <div class="navbar-right navbar-menu">
+                <a href="{% url 'home' %}">Inicio</a>
+                <a href="{% url 'cotizaciones_view' %}">Cotizaciones</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'pictures_site' %}">Registro Fotos</a>
+                    <a href="{% url 'dashboard' %}">Reportes</a>
+                    <a href="{% url 'logout' %}">Cerrar Sesión</a>
+                {% else %}
+                    <a href="{% url 'login_operadores' %}">Iniciar Sesión</a>
+                {% endif %}
+            </div>
 
-          <div class="navbar-toggle">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-          </div>
-      </div>
-  </nav>
+            <div class="navbar-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
 
-  <main role="main" class="container">
-      {% block content %}{% endblock %}
-  </main>
+    <div class="container" role="main">
+        {% block content %}{% endblock %}
+    </div>
 
-  <footer>
-      <div class="footer-content">
-          © 2024 ERA. All rights reserved.
-      </div>
-  </footer>
+    <footer>
+        <div class="footer-content">
+            © 2024 ERA. All rights reserved.
+        </div>
+    </footer>
 
   {% block extra_js %}{% endblock %}
 
