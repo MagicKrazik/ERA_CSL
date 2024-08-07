@@ -14,3 +14,13 @@ def login_operadores(request):
 def login_clientes(request):
     return render(request, 'login_clientes.html')
 
+def pictures_site(request):
+    return render(request, 'pictures_site.html')
+
+
+#def upload_pictures(request):
+#    clients = Client.objects.all()  # Assuming you have a Client model
+#    context = {
+#        'clients': clients,
+#    }
+#    return render(request, 'pictures_site.html', context)

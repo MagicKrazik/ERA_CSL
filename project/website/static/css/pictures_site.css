@@ -1,0 +1,142 @@
+/* ERA Picture Upload Styles - Mobile Optimized */
+
+/* Importing base styles */
+@import url('home.css');
+
+/* Upload Form Section */
+.upload-form {
+    padding: 20px;
+    background-color: var(--white);
+}
+
+.user-info {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.user-info #username {
+    font-weight: bold;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group input[type="file"] {
+    padding: 10px 0;
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 12 12'%3E%3Cpath d='M10.293 3.293 6 7.586 1.707 3.293A1 1 0 0 0 .293 4.707l5 5a1 1 0 0 0 1.414 0l5-5a1 1 0 1 0-1.414-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.file-preview {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.cta-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover, .cta-button:active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .upload-form {
+        padding: 40px 20px;
+    }
+
+    form {
+        padding: 30px;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 767px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="file"],
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
+    .file-preview {
+        height: 150px;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+    }
+}
