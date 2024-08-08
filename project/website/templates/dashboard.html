@@ -71,6 +71,15 @@
             </div>
         </div>
     </section>
+    {% if user.is_staff %}
+    <section class="admin-operadores">
+        <h2>Administración de Operadores</h2>
+        <div class="admin-links">
+            <a href="{% url 'create_operator' %}" class="admin-button">Crear Nuevo Operador</a>
+            <a href="{% url 'operator_list' %}" class="admin-button">Lista de Operadores</a>
+        </div>
+    </section>
+    {% endif %}
 </div>
 {% endblock %}
 

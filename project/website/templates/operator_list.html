@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/operator_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="operator-list">
+    <h2>Lista de Operadores</h2>
+    <a href="{% url 'create_operator' %}" class="create-link">Crear Nuevo Operador</a>
+    <ul>
+        {% for operator in operators %}
+        <li>{{ operator.username }} - {{ operator.email }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

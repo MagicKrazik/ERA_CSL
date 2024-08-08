@@ -1,0 +1,49 @@
+.operator-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.operator-list h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.operator-list .create-link {
+    display: block;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.operator-list .create-link:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.operator-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.operator-list li {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .operator-list {
+        padding: 10px;
+    }
+}

@@ -17,7 +17,7 @@
 
 <div class="section upload-form">
     <div class="user-info">
-        <p>Bienvenido, Operador <span id="username">{{ user.username }}</span></p>
+        <p>Bienvenido, <span id="username">{{ user.username }}</span></p>
     </div>
     <form action="#" method="post" enctype="multipart/form-data">
         {% csrf_token %}
